@@ -1,0 +1,12 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Article categorizer</title>
+</head>
+<body>
+<p> Drag and drop this icon to your bookmarklet </p>
+<a onclick="alert('Drag it to your bookmarks bar to install'); return false;" href="javascript:void((function(){var w=window,d=document,wi=500,hi=250,top=(w.screenTop||w.screenY)+50,left=(w.screenX||w.screenLeft)+((w.innerWidth||d.documentElement.offsetWidth||0)/2)-(wi/2);var pop=function(){var url=encodeURIComponent(w.location.href),title=encodeURIComponent(d.title||'');var share=w.open('http://192.168.1.5:8080/categorizerWindow?t='+(new Date().getTime()) + '&url='+url,'__aliveProfileBookmarklet', 'status=no,resizable=yes,scrollbars=no,personalbar=no,directories=no,location=yes,toolbar=no,menubar=no,width='+wi+',height='+hi+',top='+top+',left='+left);setTimeout(function(){share.focus()},50)};pop();})())" title="categorizerWindow" style="text-decoration:none;">
+    <img src="images/bookmarker.png" title="categorizer"  style="float:left; margin-right:5px;" alt="article categorizer" />categorizer</a>
+</body>
+</html>

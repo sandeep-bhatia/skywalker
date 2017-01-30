@@ -1,0 +1,67 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="recommendationsApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Node/Angular Recommendation App</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="recommendations.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <style>
+
+    </style>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-controller="mainController">
+<div class="container">
+
+    <div id="recommendation-form" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <form>
+                <div class="form-group">
+
+                    <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                    <input type="text" class="form-control input-lg text-center" placeholder="Please enter a url ..." ng-model="sourceURL">
+                </div>
+
+                <!-- createToDo() WILL CREATE NEW TODOS -->
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="askRecommendation()">Ask Recommendations</button>
+            </form>
+        </div>
+    </div>
+    <div class="loader" style="width:100%">
+        <img align="center" src="{{spinnerUrl}}">
+    </div>
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        &nbsp;
+    </div>
+    <table align="center" class="table-style-two" border="1" width="100%">
+                <col width="15%" />
+                <col width="5%" />
+                <col width="80%" />
+                <tr  ng-repeat="recommendation in recommendations">
+                    <td>
+                        <a href="{{recommendation.url}}">
+                            <img src="{{recommendation.image}}" height="75px" width="105px" />
+                        </a>
+                    </td>
+                    <td>{{recommendation.hostName}}</td>
+                    <td>{{recommendation.summary}} <a href="{{recommendation.url}}" target="_blank">read more...</a></td>
+                </tr>
+            </table>
+</div>
+
+</body>
+</html>

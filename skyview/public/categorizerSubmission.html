@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-select-with-default-values-production</title>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="./javascripts/categorizer.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+
+
+
+</head>
+<body ng-app="categorySelect">
+<div ng-controller="CategoryController" class="col-sm-8 col-sm-offset-2 text-center">
+    <form name="myForm">
+        <label for="mySelect">Please select a category:</label>
+        <select name="mySelect" id="mySelect"
+                ng-options="option.name for option in data.availableOptions track by option.id"
+                ng-model="data.selectedOption" ></select>
+        <button type="submit" ng-click="onSubmit()">Submit Category</button>
+    </form>
+</div>
+</body>
+</html>
